@@ -26,11 +26,13 @@ function solveEquation(a, b, c) {
 solveEquation(1, 4, 1);
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  let percentMounth = (percent / 12) / 100;
-  console.log(percentMounth);
-  let loanBody = amount - contribution;
-  let payUser = loanBody * (percentMounth + (percentMounth / (((1 + percentMounth)**countMonths) - 1)));
-  let totalDebt = payUser * countMonths;
-  console.log(Number(totalDebt.toFixed(2)));
-  return Number(totalDebt.toFixed(2));
+	let percentMounth = (percent / 12) / 100;
+	console.log(percentMounth);
+	let loanBody = amount - contribution;
+	let payUser = loanBody * (percentMounth + (percentMounth / (((1 + percentMounth) ** countMonths) - 1)));
+	let totalDebt = payUser * countMonths;
+	console.log(Number(totalDebt.toFixed(2)));
+	return Number(totalDebt.toFixed(2));
 }
+
+calculateTotalMortgage(10, 0, 50000, 12);
