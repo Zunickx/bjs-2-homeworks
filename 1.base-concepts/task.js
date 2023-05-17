@@ -8,11 +8,6 @@ function solveEquation(a, b, c) {
 	let d = Math.pow(b, 2) - (4 * a * c);
 	console.log(d);
 
-	if (d < 0) {
-		return false;
-		console.log(arr);
-	}
-
 	if (d == 0) {
 		oneRoot = -b / (2 * a);
 		arr.push(oneRoot);
