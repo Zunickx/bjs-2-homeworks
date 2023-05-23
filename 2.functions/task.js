@@ -23,9 +23,17 @@ function getArrayParams(...arr) {
 getArrayParams(-99, 99, 10);
 
 function summElementsWorker(...arr) {
-  let sumArr = arr.reduce(function(sum, currentNumber){
-    return sum + currentNumber;
-  })
+  // let sumArr = arr.reduce(function(sum, index){
+  //   return sum + index;
+  // })
+  // return sumArr;
+
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++){
+    sum += arr[i];
+  }
+  console.log(sum);
+  return sum;
 }
 
 summElementsWorker(10, 10, 11, 20, 10);
