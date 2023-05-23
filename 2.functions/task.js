@@ -23,8 +23,12 @@ function getArrayParams(...arr) {
 getArrayParams(-99, 99, 10);
 
 function summElementsWorker(...arr) {
-
+  let sumArr = arr.reduce(function(sum, currentNumber){
+    return sum + currentNumber;
+  })
 }
+
+summElementsWorker(10, 10, 11, 20, 10);
 
 function differenceMaxMinWorker(...arr) {
 
