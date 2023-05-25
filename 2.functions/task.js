@@ -61,7 +61,18 @@ function differenceMaxMinWorker(...arr) {
 differenceMaxMinWorker(10, 10, 11, 20, 10);
 
 function differenceEvenOddWorker(...arr) {
+  let sumEvenElement = 0;
+  let sumOddElement = 0;
 
+  for (let i = 0; i < arr.length; i++){
+    if(arr[i] % 2 == 0){
+      sumEvenElement++;
+    } else {
+      sumOddElement++;
+    }
+  }
+
+  return sumEvenElement - sumOddElement;
 }
 
 function averageEvenElementsWorker(...arr) {
