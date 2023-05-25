@@ -92,8 +92,27 @@ function differenceEvenOddWorker(...arr) {
 differenceEvenOddWorker(94, 51, 57, 41, 47, 66, 58, 10, 38, 17);
 
 function averageEvenElementsWorker(...arr) {
+	let sumEvenElement = [];
+	let countEvenElement = 0;
 
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] % 2 == 0) {
+			sumEvenElement.push(arr[i]);
+			countEvenElement++
+		}
+	}
+
+	let see = sumEvenElement.reduce(function(sum, elem) {
+		return sum + elem;
+	}, 0);
+
+	console.log(see);
+	console.log(countEvenElement);
+
+	return see / countEvenElement;
 }
+
+averageEvenElementsWorker(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
 function makeWork (arrOfArr, func) {
 
