@@ -61,19 +61,35 @@ function differenceMaxMinWorker(...arr) {
 differenceMaxMinWorker(10, 10, 11, 20, 10);
 
 function differenceEvenOddWorker(...arr) {
-  let sumEvenElement = 0;
-  let sumOddElement = 0;
+	let sumEvenElement = [];
+	let sumOddElement = [];
+	let diff;
 
-  for (let i = 0; i < arr.length; i++){
-    if(arr[i] % 2 == 0){
-      sumEvenElement++;
-    } else {
-      sumOddElement++;
-    }
-  }
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] % 2 == 0) {
+			sumEvenElement.push(arr[i]);
+		} else {
+			sumOddElement.push(arr[i]);
+		}
+	}
 
-  return sumEvenElement - sumOddElement;
+	let see = sumEvenElement.reduce(function(sum, elem) {
+		return sum + elem;
+	}, 0);
+
+	let soe = sumOddElement.reduce(function(sum, elem) {
+		return sum + elem;
+	}, 0);
+
+
+	console.log(see);
+	console.log(soe);
+
+	return diff = see - soe;
+
 }
+
+differenceEvenOddWorker(94, 51, 57, 41, 47, 66, 58, 10, 38, 17);
 
 function averageEvenElementsWorker(...arr) {
 
