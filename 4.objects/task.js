@@ -31,8 +31,10 @@ Student.prototype.getAverage = function() {
   }, 0);
 }
 
-Student.prototype.exclude = function (reason) {
-  
+Student.prototype.exclude = function(reason) {
+  this.excluded = reason;
+  delete this.subject;
+  delete this.marks;
 }
 
 student1.setSubject("Algebra");
