@@ -21,8 +21,13 @@ Student.prototype.addMarks = function(...mark) {
   }
 }
 
-Student.prototype.getAverage = function () {
-  
+Student.prototype.getAverage = function (){
+  if(this.marks.length === 0) {
+    return 0;
+  } else {
+    const averageGrades = marks.reduce((acc, item) => acc + item, 0);
+    return averageGrades / marks.length;
+  }
 }
 
 Student.prototype.exclude = function (reason) {
