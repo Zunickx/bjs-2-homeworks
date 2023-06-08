@@ -2,6 +2,7 @@ function Student(name, gender, age) {
   this.name = name;
   this.gender = gender;
   this.age = age;
+  this.marks = [];
 }
 
 const student1 = new Student ("Василиса", "женский", 19);
