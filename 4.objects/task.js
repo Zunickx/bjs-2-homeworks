@@ -1,5 +1,8 @@
 function Student(name, gender, age) {
-  
+  this.name = name;
+  this.gender = gender;
+  this.age = age;
+  console.log(this.name);
 }
 
 Student.prototype.setSubject = function (subjectName) {
