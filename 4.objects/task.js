@@ -13,23 +13,26 @@ Student.prototype.setSubject = function(subjectName) {
   this.subject = subjectName;
 }
 
-Student.prototype.addMarks = function(...mark) {
+Student.prototype.addMarks = function(...marks) {
   if(this.marks === undefined) {
-    this.marks = mark;
+    this.marks = marks;
   } else {
-    this.marks.push(mark[i]);
+    this.marks.push(marks[i]);
   }
 }
 
-Student.prototype.getAverage = function (){
-  if(this.marks.length === 0) {
-    return 0;
-  } else {
-    const averageGrades = marks.reduce((acc, item) => acc + item, 0);
-    return averageGrades / marks.length;
-  }
+Student.prototype.getAverage = function() {
+  return this.marks.reduce((acc, mark, index) => {
+    acc += mark;
+    if (index === this.marks.length - 1) {
+      return acc / this.marks.length;
+    }
+    return acc
+  }, 0);
 }
 
 Student.prototype.exclude = function (reason) {
   
 }
+
+student1.setSubject("Algebra");
