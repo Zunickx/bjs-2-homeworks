@@ -14,21 +14,16 @@ Student.prototype.setSubject = function(subjectName) {
 }
 
 Student.prototype.addMarks = function(...marks) {
-  if(this.marks === undefined) {
-    this.marks = marks;
-  } else {
-    this.marks.push(marks[i]);
-  }
+  if(this.marks === undefined) { 
+    this.marks = [...marks];
+    } else {
+      this.marks.push(...marks);
+    }
 }
 
 Student.prototype.getAverage = function() {
-  return this.marks.reduce((acc, mark, index) => {
-    acc += mark;
-    if (index === this.marks.length - 1) {
-      return acc / this.marks.length;
-    }
-    return acc
-  }, 0);
+  let sum = this.marks.reduce((acc, item)=> acc + item, 0);
+  return (sum / this.marks.length);
 }
 
 Student.prototype.exclude = function(reason) {
