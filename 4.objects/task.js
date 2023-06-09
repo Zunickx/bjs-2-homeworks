@@ -15,7 +15,7 @@ Student.prototype.setSubject = function(subjectName) {
 
 Student.prototype.addMarks = function(...marks) {
   if(this.marks === undefined) { 
-    this.marks = [...marks];
+    return 0;
     } else {
       marks.push(...marks);
     }
@@ -34,5 +34,3 @@ Student.prototype.exclude = function(reason) {
   delete this.subject;
   delete this.marks;
 }
-
-student1.setSubject("Algebra");
