@@ -17,13 +17,16 @@ Student.prototype.addMarks = function(...marks) {
   if(this.marks === undefined) { 
     this.marks = [...marks];
     } else {
-      this.marks.push(...marks);
+      marks.push(...marks);
     }
 }
 
 Student.prototype.getAverage = function() {
-  let sum = this.marks.reduce((acc, item)=> acc + item, 0);
-  return (sum / this.marks.length);
+  if((this.marks === undefined) || (this.marks.length === 0)){
+    return 0;
+  } else {
+    let sum = this.marks.reduce((acc, item)=> acc + item, 0);
+    return (sum / this.marks.length);  }
 }
 
 Student.prototype.exclude = function(reason) {
