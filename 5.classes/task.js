@@ -74,6 +74,11 @@ class Library {
         }
         return;
     }
+
+    findBookBy(type, value){
+        let searchResult = this.books.find(book => book[type] === value);
+        return (typeof searchResult === 'object') ? searchResult : null;
+    }
 }
 
 
