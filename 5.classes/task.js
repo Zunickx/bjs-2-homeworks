@@ -79,6 +79,16 @@ class Library {
         let searchResult = this.books.find(book => book[type] === value);
         return (typeof searchResult === 'object') ? searchResult : null;
     }
+
+    giveBookByName(bookName) {
+        let requestBook = this.books.find(book => book.name === bookName); // находим книгу в массиве и сравниваем свойство name со значением (названием книги,которую ищем)
+        if(typeof requestBook === 'object'){ 
+            this.books.splice(this.books.indexOf(requestBook), 1);
+            return requestBook;
+        } else {
+            return null;
+        }
+    }
 }
 
 
