@@ -22,7 +22,7 @@ Student.prototype.addMarks = function(...marks) {
 }
 
 Student.prototype.getAverage = function() {
-  if((this.marks === undefined) || (this.marks.length === 0)){
+  if(this.marks === undefined){
     return 0;
   } else {
     let sum = this.marks.reduce((acc, item)=> acc + item, 0);
