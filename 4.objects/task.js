@@ -31,10 +31,10 @@ Student.prototype.getAverage = function() {
 }
 
 Student.prototype.exclude = function(reason) {
-  if (this.reason !== undefined) {
-    return "Плохая учеба";
-  }
   this.excluded = reason;
-  delete this.subject;
-  delete this.marks;
+  if (this.reason === "Плохая учеба") {
+    delete this.subject;
+    delete this.marks;;
+  }
+
 }
