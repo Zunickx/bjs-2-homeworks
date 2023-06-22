@@ -13,3 +13,20 @@ function validateCount(arg){
       return Error;
     }
 }
+
+
+class Triangle {
+    constructor(sideA, sideB, sideC){
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+
+        if(this.sideA + this.sideB < this.sideC || this.sideA + this.sideC < this.sideB || this.sideC + this.sideB < this.sideA) {
+            throw new Error ('Треугольник с такими сторонами не существует');
+        }
+
+        get perimeter() {
+            return this.sideA + this.sideB + this.sideC;
+        }
+    }
+}
