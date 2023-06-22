@@ -35,3 +35,22 @@ class Triangle {
         return Number(Math.sqrt(p * (p - this.sideA) * (p - this.sideB) * (p - this.sideC)).toFixed(3));
     }
 }
+
+function getTriangle(sideA, sideB, sideC) {
+    try {
+      return new Triangle(sideA, sideB, sideC);
+    } catch (Error) {
+      class Object {
+        
+        get area() {
+          return 'Ошибка! Треугольник не существует';
+        }
+  
+        get perimeter() {
+          return 'Ошибка! Треугольник не существует';
+        }
+      }
+      const triangle = new Object();
+      return triangle;
+    }
+}
