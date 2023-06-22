@@ -24,9 +24,14 @@ class Triangle {
         if(this.sideA + this.sideB < this.sideC || this.sideA + this.sideC < this.sideB || this.sideC + this.sideB < this.sideA) {
             throw new Error ('Треугольник с такими сторонами не существует');
         }
+    }
 
-        get perimeter() {
-            return this.sideA + this.sideB + this.sideC;
-        }
+    get perimeter() {
+        return this.sideA + this.sideB + this.sideC;
+    }
+
+    get area() {
+        let p = 0.5 * (this.sideA + this.sideB + this.sideC);
+        return Number(Math.sqrt(p * (p - this.sideA) * (p - this.sideB) * (p - this.sideC)).toFixed(3));
     }
 }
