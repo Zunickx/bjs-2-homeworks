@@ -1,14 +1,14 @@
-﻿function parseCount(NumberP) {
-    if(isNaN(NumberP)){
-      throw new Error ("Невалидное значение");
+﻿function parseCount(arg) {
+    if(isNaN(arg)){
+      throw new Error ('Невалидное значение');
     } else {
-        return Number.parseFloat(NumberP);
+        return Number.parseFloat(arg);
     }
 }
 
-function validateCount(NumberP){
+function validateCount(arg){
     try{
-      return parseCount(NumberP);
+      return parseCount(arg);
     } catch(Error) {
       return Error;
     }
