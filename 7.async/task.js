@@ -25,4 +25,17 @@ class AlarmClock{
     getCurrentFormattedTime() {
         return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
     }
+
+    start() {
+        if(this.intervalId !== null) {
+            return;
+        }
+    }
+
+    stop() {
+        clearInterval(this.intervalId);
+        this.intervalId = null;
+    }
+
+    
   }
