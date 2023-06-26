@@ -23,13 +23,20 @@ class AlarmClock{
     }
 
     getCurrentFormattedTime() {
-        return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }); // возвращаем строковое значение времени
     }
 
     start() {
         if(this.intervalId !== null) {
             return;
         }
+
+        this.intervalId = setInterval(() => this.alarmCollection.forEach(element => {
+            if(element.time === this.getCurrentFormattedTime() && element.canCall) { // сравниваем с текущим форматом времени и вызовом звонка
+                element.canCall = false;
+                element.callback();
+            }
+        }), 1000);
     }
 
     stop() {
@@ -37,5 +44,12 @@ class AlarmClock{
         this.intervalId = null;
     }
 
-    
+    resetAllCalls() {
+        this.alarmCollection.forEach(element => element.canCall = true);
+    }
+
+    clearAlarms(){
+        this.stop(); // вызываем остановку интервала будильника
+        this.alarmCollection = []; // сбрасываем коллекцию будильников(звонков)
+    }
   }
